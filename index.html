@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChildsMind — DJ | London</title>
+<meta name="description" content="Dublin-born, London-based DJ and producer. Ten years behind the decks. Open format, house, club classics, underground. Available for residencies, private and corporate events.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A0A0B; --slab:#141416; --bone:#EDEAE3;
+    --mute:#8B8B84; --soft:#C9C6BF; --flare:#FF5A2C;
+    --line:rgba(237,234,227,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--bone);font-family:'Barlow',system-ui,sans-serif;
+       font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .mono{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+  a{color:inherit}
+
+  .top{display:flex;justify-content:space-between;align-items:baseline;padding:24px 0;gap:16px;flex-wrap:wrap}
+  .top .mono{color:var(--bone)}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;
+        padding:36px 0 56px;border-top:1px solid var(--line)}
+  h1{font-family:'Anton',Impact,sans-serif;font-weight:400;
+     font-size:clamp(58px,9vw,116px);line-height:.86;letter-spacing:-.01em;text-transform:uppercase}
+  h1 .off{color:var(--flare)}
+  .sub{margin-top:22px;font-size:clamp(18px,2.1vw,22px);line-height:1.36;font-weight:500;max-width:34ch}
+  .sub span{color:var(--mute)}
+  .hero img{width:100%;height:auto;display:block;border:1px solid var(--line)}
+
+  .tally{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+         border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .tally div{background:var(--ink);padding:18px 6px 20px}
+  .tally b{display:block;font-family:'Anton',sans-serif;font-weight:400;
+           font-size:clamp(22px,4vw,36px);line-height:1;letter-spacing:-.01em}
+  .tally .mono{display:block;margin-top:8px;font-size:10px}
+
+  .sec-head{display:flex;justify-content:space-between;align-items:baseline;
+            padding:56px 0 18px;gap:12px;border-bottom:1px solid var(--line)}
+
+  /* mixes */
+  .mixes{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding-top:26px}
+  .mix{background:var(--slab);border:1px solid var(--line);padding:20px}
+  .mix h3{font-family:'Anton',sans-serif;font-weight:400;font-size:26px;
+          line-height:1;text-transform:uppercase;margin-bottom:8px}
+  .mix p{font-size:15px;color:var(--mute);margin-bottom:16px}
+  .mix .embed{position:relative;width:100%;height:120px;background:#0d0d0e;border:1px solid var(--line)}
+  .mix .embed iframe{width:100%;height:100%;border:0;display:block}
+  .placeholder{display:flex;align-items:center;justify-content:center;height:100%;
+               font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;
+               text-transform:uppercase;color:var(--mute);text-align:center;padding:12px}
+
+  /* about */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:52px;padding:64px 0 10px}
+  .cols h2{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(26px,3.4vw,36px);
+           line-height:1;text-transform:uppercase;margin-bottom:18px}
+  .cols p{font-size:16.5px;line-height:1.62;color:var(--soft);max-width:47ch}
+  .cols p+p{margin-top:14px}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:22px}
+  .tags span{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;
+             text-transform:uppercase;border:1px solid var(--line);padding:7px 11px;color:var(--soft)}
+
+  /* gallery */
+  .gal{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding-top:26px}
+  .gal img{width:100%;height:100%;object-fit:cover;display:block;border:1px solid var(--line);aspect-ratio:4/3}
+
+  /* played */
+  .played{display:flex;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:56px}
+  .played div{flex:1 1 200px;padding:20px 18px 22px 0;border-bottom:1px solid var(--line)}
+  .played strong{display:block;font-size:16.5px;font-weight:600;margin-top:6px}
+
+  /* booking */
+  .book{padding:64px 0 18px}
+  .book h2{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(42px,9vw,96px);
+           line-height:.9;text-transform:uppercase;letter-spacing:-.012em}
+  .book .lead{margin-top:20px;font-size:18px;color:var(--soft);max-width:46ch}
+  .links{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:28px}
+  .links a{text-decoration:none;font-size:17px;border-bottom:1px solid var(--flare);
+           padding-bottom:3px;transition:color .16s}
+  .links a:hover{color:var(--flare)}
+  footer{padding:44px 0 40px;border-top:1px solid var(--line);margin-top:44px}
+
+  .rise{opacity:0;transform:translateY(14px);animation:rise .62s cubic-bezier(.2,.7,.3,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.rise{animation:none;opacity:1;transform:none}*{transition:none!important}}
+
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr;gap:32px}
+    .cols{grid-template-columns:1fr;gap:38px}
+    .mixes{grid-template-columns:1fr}
+    .gal{grid-template-columns:1fr}
+    .tally{grid-template-columns:repeat(2,1fr)}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <div class="mono">ChildsMind</div>
+    <div class="mono">DJ &amp; Producer &middot; London</div>
+  </div>
+
+  <section class="hero">
+    <div>
+      <h1 class="rise" style="animation-delay:.08s">Childs<br><span class="off">mind</span></h1>
+      <p class="sub rise" style="animation-delay:.2s">
+        Dublin-born, London-based. Ten years behind the decks, across every format.
+        <span>Available for residencies, private and corporate events.</span>
+      </p>
+    </div>
+    <img class="rise" style="animation-delay:.3s" src="img/press.jpg" alt="ChildsMind">
+  </section>
+
+  <div class="tally rise" style="animation-delay:.36s">
+    <div><b>10</b><span class="mono">Years DJing</span></div>
+    <div><b>All</b><span class="mono">Formats</span></div>
+    <div><b>600</b><span class="mono">Peak crowd</span></div>
+    <div><b>60K</b><span class="mono">Following</span></div>
+  </div>
+
+  <div class="sec-head">
+    <div class="mono">Mixes</div>
+    <div class="mono">Listen</div>
+  </div>
+
+  <div class="mixes">
+    <div class="mix">
+      <h3>House &amp; Club Classics</h3>
+      <p>Open format. Built for bars and late rooms: commercial house through to the classics that fill a floor.</p>
+      <div class="embed">
+        <!-- MIXCLOUD EMBED 1 GOES HERE -->
+        <div class="placeholder">Mix embed &mdash; paste Mixcloud code here</div>
+      </div>
+    </div>
+    <div class="mix">
+      <h3>Melodic &amp; Deep</h3>
+      <p>Melodic, organic and deep house. Warmer and slower building, for terraces, early evenings and restaurants.</p>
+      <div class="embed">
+        <!-- MIXCLOUD EMBED 2 GOES HERE -->
+        <div class="placeholder">Mix embed &mdash; paste Mixcloud code here</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div>
+      <h2>About</h2>
+      <p>I have been DJing and producing for ten years, starting at 16 in Ireland and now based in Peckham. I hold an HND in Music Production and release my own original music.</p>
+      <p>I play across all formats. House, commercial, club classics, disco, RnB and open format for bars and private events, through to tech house and harder underground sounds for club sets. Ten years of reading rooms means I play the crowd in front of me rather than a prepared setlist.</p>
+      <div class="tags">
+        <span>House</span><span>Commercial</span><span>Club classics</span><span>Disco</span>
+        <span>RnB</span><span>Open format</span><span>Tech house</span><span>Melodic &amp; deep</span>
+      </div>
+    </div>
+    <div>
+      <h2>Why book me</h2>
+      <p>I also run Project 32, a touring event series that has delivered eight shows across Ireland with peak attendances of 600. So I understand a night from behind the bar as well as behind the decks: how the room builds, why the last hour matters, and what a venue actually needs from a DJ.</p>
+      <p>Reliable, easy to work with, and equally comfortable warming a room or closing it. I turn up early, I bring my own gear when it is needed, and I read the brief.</p>
+      <p>I also build the audience side. My channels reach 60,000 people and I am happy to promote a night I am playing.</p>
+    </div>
+  </div>
+
+  <div class="sec-head">
+    <div class="mono">In the room</div>
+    <div class="mono">&nbsp;</div>
+  </div>
+  <div class="gal">
+    <img src="img/club.jpg" alt="ChildsMind DJing">
+    <img src="img/bw.jpg" alt="ChildsMind DJing">
+  </div>
+
+  <div class="played">
+    <div><span class="mono">Supported</span><strong>Jax Jones</strong></div>
+    <div><span class="mono">Supported</span><strong>Hannah Laing</strong></div>
+    <div><span class="mono">Supported</span><strong>Matt Guy</strong></div>
+    <div><span class="mono">Headlined</span><strong>Tengu &middot; Cyprus Avenue</strong></div>
+  </div>
+
+  <section class="book">
+    <h2>Book me.</h2>
+    <p class="lead">Residencies, private parties, corporate events and clubs. London and surrounding. Get in touch for availability and rates.</p>
+    <div class="links">
+      <a href="mailto:childsmindmusicofficial@gmail.com">childsmindmusicofficial@gmail.com</a>
+      <a href="tel:+353897067984">+353 89 706 7984</a>
+      <a href="https://www.instagram.com/childsmindmusic" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="mono">ChildsMind &middot; DJ &amp; Producer &middot; Based in Peckham, London &middot; Right to work in the UK and Ireland</div>
+  </footer>
+
+</div>
+</body>
+</html>
